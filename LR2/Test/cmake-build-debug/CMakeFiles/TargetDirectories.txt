@@ -1,3 +1,0 @@
-/home/ivan/Documents/OSISP/LR2/Test/cmake-build-debug/CMakeFiles/Test.dir
-/home/ivan/Documents/OSISP/LR2/Test/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/ivan/Documents/OSISP/LR2/Test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
