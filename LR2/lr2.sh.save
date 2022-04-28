@@ -1,0 +1,22 @@
+#!/bin/bash
+Err="Errsh.log"
+:> $Err
+
+if [ $# \< 1 ]
+then
+  echo "$(basename $0): Too few arguments" 2>> $Err
+  exit 1
+fi
+
+File=$( finfind $WHERE -type f -exec hexdump -n 4 -e '4/1 "%2x" " {}\n"'  {} \; | grep ^7f454c46
+d $(readlink -f $1) )
+
+STDIFS=$IFS
+IFS='"'
+
+
+
+IFS=$STDIFS
+
+sed -r "s/[^:]*:([^:]*:)?/$(basename $0):\1/g" $Err >&2
+rm $Err
