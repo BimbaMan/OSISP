@@ -8,10 +8,10 @@
 		},
 		"paths" : 
 		{
-			"cmake" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/bin/cmake/linux/bin/cmake",
-			"cpack" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/bin/cmake/linux/bin/cpack",
-			"ctest" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/bin/cmake/linux/bin/ctest",
-			"root" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/bin/cmake/linux/share/cmake-3.22"
+			"cmake" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake",
+			"cpack" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cpack",
+			"ctest" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/ctest",
+			"root" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22"
 		},
 		"version" : 
 		{
@@ -35,7 +35,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-8cbfd70fd2b689aec88c.json",
+			"jsonFile" : "cache-v2-c8bc2d2b28a64a0e90f5.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -44,7 +44,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-83db2709f3082111e909.json",
+			"jsonFile" : "cmakeFiles-v1-e8538b99fff11405b807.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -66,7 +66,7 @@
 	{
 		"cache-v2" : 
 		{
-			"jsonFile" : "cache-v2-8cbfd70fd2b689aec88c.json",
+			"jsonFile" : "cache-v2-c8bc2d2b28a64a0e90f5.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -76,7 +76,7 @@
 		},
 		"cmakeFiles-v1" : 
 		{
-			"jsonFile" : "cmakeFiles-v1-83db2709f3082111e909.json",
+			"jsonFile" : "cmakeFiles-v1-e8538b99fff11405b807.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{

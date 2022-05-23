@@ -61,6 +61,7 @@ int main(int args, char *argv[])
     int S1 = ArrayOfDigits[len / 2 -1] * 100 + ArrayOfDigits[len / 2] * 10 + ArrayOfDigits[len / 2+1];
    // printf("Цифры: %d\n", S1);
     int N = S1 % K + 1;
+    N = N - 4;         //mini fail
     printf("Вариант: %d\n", N);
 
     return 0;

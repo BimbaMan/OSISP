@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: C_code
+# Project: lr2_var7
 # Configurations: Debug
 # =============================================================================
 # =============================================================================
@@ -14,7 +14,7 @@
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__C_code_Debug
+rule C_COMPILER__lr2_var7_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/bin/cc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -24,7 +24,7 @@ rule C_COMPILER__C_code_Debug
 #############################################
 # Rule for linking C executable.
 
-rule C_EXECUTABLE_LINKER__C_code_Debug
+rule C_EXECUTABLE_LINKER__lr2_var7_Debug
   command = $PRE_LINK && /usr/bin/cc $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake --regenerate-during-build -S"/home/ivan/Documents/OSISP/LR2/C code" -B"/home/ivan/Documents/OSISP/LR2/C code/cmake-build-debug"
+  command = /home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake --regenerate-during-build -S"/home/ivan/Documents/OSISP/LR2/lr2 var7" -B"/home/ivan/Documents/OSISP/LR2/lr2 var7/cmake-build-debug"
   description = Re-running CMake...
   generator = 1
 

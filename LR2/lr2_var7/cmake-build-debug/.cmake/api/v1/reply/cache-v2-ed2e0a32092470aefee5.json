@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/ivan/Documents/OSISP/LR2/C code/cmake-build-debug"
+			"value" : "/home/ivan/Documents/OSISP/LR2/lr2 var7/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -103,7 +103,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/bin/cmake/linux/bin/cmake"
+			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -115,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/bin/cmake/linux/bin/cpack"
+			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/bin/cmake/linux/bin/ctest"
+			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER",
@@ -283,7 +283,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/bin/cmake/linux/bin/ccmake"
+			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/ccmake"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -463,7 +463,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/ivan/Documents/OSISP/LR2/C code"
+			"value" : "/home/ivan/Documents/OSISP/LR2/lr2 var7"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/bin/ninja/linux/ninja"
+			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/ninja/linux/ninja"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -703,7 +703,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C_code"
+			"value" : "lr2_var7"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -747,7 +747,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/bin/cmake/linux/share/cmake-3.22"
+			"value" : "/home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/share/cmake-3.22"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -986,7 +986,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "C_code_BINARY_DIR",
+			"name" : "lr2_var7_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -995,10 +995,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/ivan/Documents/OSISP/LR2/C code/cmake-build-debug"
+			"value" : "/home/ivan/Documents/OSISP/LR2/lr2 var7/cmake-build-debug"
 		},
 		{
-			"name" : "C_code_IS_TOP_LEVEL",
+			"name" : "lr2_var7_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1010,7 +1010,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "C_code_SOURCE_DIR",
+			"name" : "lr2_var7_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1019,7 +1019,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/ivan/Documents/OSISP/LR2/C code"
+			"value" : "/home/ivan/Documents/OSISP/LR2/lr2 var7"
 		}
 	],
 	"kind" : "cache",

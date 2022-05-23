@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: C_code
+# Project: lr2_var7
 # Configurations: Debug
 # =============================================================================
 
@@ -39,47 +39,47 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/ivan/Documents/OSISP/LR2/C$ code/cmake-build-debug/
+cmake_ninja_workdir = /home/ivan/Documents/OSISP/LR2/lr2$ var7/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target C_code
+# Object build statements for EXECUTABLE target lr2_var7
 
 
 #############################################
-# Order-only phony target for C_code
+# Order-only phony target for lr2_var7
 
-build cmake_object_order_depends_target_C_code: phony || CMakeFiles/C_code.dir
+build cmake_object_order_depends_target_lr2_var7: phony || CMakeFiles/lr2_var7.dir
 
-build CMakeFiles/C_code.dir/main.c.o: C_COMPILER__C_code_Debug /home/ivan/Documents/OSISP/LR2/C$ code/main.c || cmake_object_order_depends_target_C_code
-  DEP_FILE = CMakeFiles/C_code.dir/main.c.o.d
-  FLAGS = -g -std=gnu2x
-  OBJECT_DIR = CMakeFiles/C_code.dir
-  OBJECT_FILE_DIR = CMakeFiles/C_code.dir
-  TARGET_COMPILE_PDB = CMakeFiles/C_code.dir/
-  TARGET_PDB = C_code.pdb
+build CMakeFiles/lr2_var7.dir/code.c.o: C_COMPILER__lr2_var7_Debug /home/ivan/Documents/OSISP/LR2/lr2$ var7/code.c || cmake_object_order_depends_target_lr2_var7
+  DEP_FILE = CMakeFiles/lr2_var7.dir/code.c.o.d
+  FLAGS = -g -std=gnu11
+  OBJECT_DIR = CMakeFiles/lr2_var7.dir
+  OBJECT_FILE_DIR = CMakeFiles/lr2_var7.dir
+  TARGET_COMPILE_PDB = CMakeFiles/lr2_var7.dir/
+  TARGET_PDB = lr2_var7.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target C_code
+# Link build statements for EXECUTABLE target lr2_var7
 
 
 #############################################
-# Link the executable C_code
+# Link the executable lr2_var7
 
-build C_code: C_EXECUTABLE_LINKER__C_code_Debug CMakeFiles/C_code.dir/main.c.o
+build lr2_var7: C_EXECUTABLE_LINKER__lr2_var7_Debug CMakeFiles/lr2_var7.dir/code.c.o
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles/C_code.dir
+  OBJECT_DIR = CMakeFiles/lr2_var7.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/C_code.dir/
-  TARGET_FILE = C_code
-  TARGET_PDB = C_code.pdb
+  TARGET_COMPILE_PDB = CMakeFiles/lr2_var7.dir/
+  TARGET_FILE = lr2_var7
+  TARGET_PDB = lr2_var7.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/ivan/Documents/OSISP/LR2/C code/cmake-build-debug" && /home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/ccmake -S"/home/ivan/Documents/OSISP/LR2/C code" -B"/home/ivan/Documents/OSISP/LR2/C code/cmake-build-debug"
+  COMMAND = cd "/home/ivan/Documents/OSISP/LR2/lr2 var7/cmake-build-debug" && /home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/ccmake -S"/home/ivan/Documents/OSISP/LR2/lr2 var7" -B"/home/ivan/Documents/OSISP/LR2/lr2 var7/cmake-build-debug"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -91,7 +91,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/ivan/Documents/OSISP/LR2/C code/cmake-build-debug" && /home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake --regenerate-during-build -S"/home/ivan/Documents/OSISP/LR2/C code" -B"/home/ivan/Documents/OSISP/LR2/C code/cmake-build-debug"
+  COMMAND = cd "/home/ivan/Documents/OSISP/LR2/lr2 var7/cmake-build-debug" && /home/ivan/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/cmake/linux/bin/cmake --regenerate-during-build -S"/home/ivan/Documents/OSISP/LR2/lr2 var7" -B"/home/ivan/Documents/OSISP/LR2/lr2 var7/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -107,9 +107,9 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /home/ivan/Documents/OSISP/LR2/C code/cmake-build-debug
+# Folder: /home/ivan/Documents/OSISP/LR2/lr2 var7/cmake-build-debug
 
-build all: phony C_code
+build all: phony lr2_var7
 
 # =============================================================================
 # Built-in targets
