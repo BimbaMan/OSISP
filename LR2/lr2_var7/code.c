@@ -1,123 +1,104 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <sys/types.h>
 #include <dirent.h>
-#include <errno.h>
+#include <string.h>
 #include <sys/stat.h>
-#include <unistd.h>
+#include <libgen.h>
+#include <errno.h>
 
-int min;
-int max;
-long int counter;
-char *prog_name;
 
-FILE *out;
+void show_dir(char *root_path, int from_size, int to_size);
 
-DIR *_opendir(const char *__name) {
-    DIR *dir;
-    dir = opendir(__name);
-    if (dir == NULL) {
-        fprintf(stderr, "%s: opendir(%s): %s\n", prog_name + 2, __name, strerror(errno));
+char *full_path(char *parent, char *name);
+
+void printErr(const char *s_name, const char *msg, const char *desc, const char *path);
+
+int isNumber(char *str);
+
+int counter = 0;
+char *program_name;
+FILE *to_write;
+
+int main(int argc, char *argv[]) {
+    program_name = basename(argv[0]);
+    if (argc < 5) {
+        printErr(program_name, "Incorrect amount of arguments.", 0, "");
+        return 1;
     }
-    return dir;
+    char *dir_name = realpath(argv[1], NULL);
+    if (dir_name == NULL) {
+        printErr(program_name, "Error opening directory:", argv[1], "");
+        return 1;
+    }
+    if (!isNumber(argv[2]) || !isNumber(argv[3])) {
+        printErr(program_name, "Incorrect sizes.", NULL, "");
+        return 1;
+    }
+    if ((to_write = fopen(argv[4], "w")) == NULL) {
+        printErr(program_name, "Can't open file:", argv[4], "");
+        return 1;
+    }
+    show_dir(dir_name, atoi(argv[2]), atoi(argv[3]));
+    if (fclose(to_write) == -1) {
+        printErr(program_name, "Error closing file:", realpath(argv[2], NULL), "");
+    }
+    printf("%d\n", counter);
+    return 0;	
+
 }
 
-void showdir(DIR *dir, const char *path) {
-    char fullpath[PATH_MAX + 1];
-    struct stat pstatus;
-    struct dirent *dir_entry;
-
-    dir_entry = readdir(dir);
-    if (!dir_entry && errno) {
-        fprintf(stderr, "%s: readdir:%s\n", prog_name + 2, strerror(errno));
-        exit(errno);
+int isNumber(char *str) {
+    for (int i = 0; str[i]; i++) {
+        if (str[i] < '0' || str[i] > '9')
+            return 0;
     }
-    while (dir_entry) {
-        if ((strncmp(dir_entry->d_name, ".", PATH_MAX) == 0) || (strncmp(dir_entry->d_name, "..", PATH_MAX) == 0)) {
-         
-            dir_entry = readdir(dir);
-               if(errno)
-               {
-            fprintf(stderr, "%s: readdir:%s\n", prog_name + 2, strerror(errno));
-            exit(errno);
-              }
-            continue;
-        }
+    return 1;
+}
 
-
-        strncpy(fullpath, path, PATH_MAX);
-
-        if (fullpath[strlen(fullpath) - 1] != '/')
-            strncat(fullpath, "/", PATH_MAX);
-        strncat(fullpath, dir_entry->d_name, PATH_MAX);
-     //   printf("%s\n",dir_entry->d_name);
-
-        if (lstat(fullpath, &pstatus) == 0) {
-            if (S_ISREG(pstatus.st_mode) && pstatus.st_size > min && pstatus.st_size < max) {
-                fprintf(out, "%s %ld\n", fullpath, pstatus.st_size);
-              //  printf("%lul\n",pstatus.st_dev);
-                counter++;
-            }
-
-            if (S_ISDIR(pstatus.st_mode)) {
-                DIR *nextdir = _opendir(fullpath);
-                if (nextdir != NULL)
-                    showdir(nextdir, fullpath);
-            }
-        }
-        else 
-        {
-            fprintf(stderr, "%s: lstat:%s\n", prog_name + 2, strerror(errno));
-            exit(errno);
-        }
-       
-        dir_entry = readdir(dir);
-
-        if(errno){
-            fprintf(stderr, "%s: readdir:%s\n", prog_name + 2, strerror(errno));
-            exit(errno);
-        }
+void show_dir(char *root_path, int from_size, int to_size) {
+    struct dirent *structdirent;
+    char *path;
+    errno = 0;
+    DIR *curr_dir;
+    if ((curr_dir = opendir(root_path)) == NULL) {
+        path = structdirent->d_name;
+        printErr(program_name, strerror(errno), NULL, root_path);
+        return;
     }
-   // closedir(dir);
-   if(closedir(dir)){
-        fprintf(stderr, "%s: closedir:%s\n", prog_name + 2, strerror(errno));
+    while ((structdirent = readdir(curr_dir))) {
+    
+        path = full_path(root_path, structdirent->d_name);
+        
+        if (structdirent->d_type == DT_DIR && strcmp(".", structdirent->d_name) && strcmp("..", structdirent->d_name)) {
+            show_dir(path, from_size, to_size);
+        } else if (structdirent->d_type == DT_REG) {
+            struct stat *buf = (struct stat *) calloc(1, sizeof(struct stat));
+            if (stat(path, buf) == -1) {
+                printErr(program_name, strerror(errno), NULL, path);
+            }
+            if (buf->st_size > from_size && buf->st_size < to_size) {
+                fprintf(to_write, "%s %ld\n", path, buf->st_size);
+            }
+            counter++;
+        }
+        errno = 0;
+    }
+    
+    if (errno != 0)
+        printErr(program_name, strerror(errno), NULL, path);
+    if (closedir(curr_dir) == -1) {
+        printErr(program_name, strerror(errno), NULL, path);
     }
 }
 
-int main(int argc, char *argv[], char *envp[]) {
-    if (argc != 5) {
-        fprintf(stderr, "%s: expected 4 arguments\n", argv[0]);
-        exit(EXIT_FAILURE);
-    }
+char *full_path(char *parent, char *name) {
+    char *full_path = (char *) calloc (strlen(parent) + strlen(name) + 2, sizeof(char));
+    strcpy(full_path, parent);
+    strcat(full_path, (char *)"/");
+    strcat(full_path, name);
+    return full_path;
+}
 
-    prog_name = argv[0];
-    char* dirName = malloc(strlen(argv[1]));
-    strcpy(dirName, argv[1]);
-    min = atoi(argv[2]);
-    max = atoi(argv[3]);
-    char* destFile = malloc(strlen(argv[4]));
-    strcpy(destFile, argv[4]);
-
-    if (min < 0 || max < 0) {
-        fprintf(stderr, "%s: size cannot be negative\n", prog_name+2);
-        exit(EXIT_FAILURE);
-    }
-
-
-    out = fopen(destFile, "w");
-
-    DIR* dir = _opendir(dirName);
-    if (dir == NULL) {
-        exit(errno);
-    }
-
-    showdir(dir, dirName);
-
-    printf( "%ld\n", counter);
-
-    free(dirName);
-    free(destFile);
-
-    return 0;
+void printErr(const char *s_name, const char *msg, const char *desc, const char *path) {
+    fprintf(stderr, "%s: %s in file %s \n", s_name, msg, path);
 }
